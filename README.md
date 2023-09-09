@@ -1,4 +1,4 @@
-# Data-Analyst-CDF-
+# Data-Analyst-CDF
 This is a repository where I store all my code and insights when I worked as Data Analyst at Community Dreams. This project will help the organization to give eligibility incentives.
 # What was the primary goal or objective of the project?
 The objective is to develop a recommendation engine for incentives offered in five states (GA, AZ, CO, FL, and OL) that will recommend incentives to consumers based on their qualifying requirements.
