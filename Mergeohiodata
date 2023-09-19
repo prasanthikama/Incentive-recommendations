@@ -1,0 +1,15 @@
+import pandas as pd
+
+# Load the first CSV file into a DataFrame
+df1 = pd.read_csv("C:\\Users\\prasa\\Downloads\\ohiowebsits.csv")
+
+# Load the second CSV file into another DataFrame
+df2 = pd.read_csv("C:\\Users\\prasa\\Downloads\\ohio.csv")
+
+# Merge the two DataFrames on the common column (e.g., 'common_column_name')
+merged_df = pd.merge(df1, df2, on='Program_Name', how='left')  # You can choose 'inner', 'outer', 'left', or 'right' as the 'how' parameter depending on your merge strategy
+
+# Save the merged DataFrame to a new CSV file
+merged_df.to_csv("C:\\Users\\prasa\\Downloads\\mergedohiodata.csv", index=False)
+
+print("CSV files merged on the common column successfully.")
