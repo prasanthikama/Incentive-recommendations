@@ -1,0 +1,23 @@
+import pandas as pd
+
+# Define the path to the CSV file containing ZIP code to city mapping
+zip_city_mapping_file = "C:\\Users\\prasa\\Downloads\\usa_zipcode_of_oh-1552j.csv"
+
+# Load the ZIP code to city mapping CSV file into a DataFrame
+zip_to_city_df = pd.read_csv(zip_city_mapping_file, dtype=str)  # Assuming all columns in the mapping file are strings
+
+# Define the path to your original CSV file
+csv_file_path = "C:\\Ohiodata_Report\\output - Copy.csv"
+
+# Load your original data into a DataFrame
+df = pd.read_csv(csv_file_path, dtype=str)
+
+# Merge your original DataFrame with the ZIP code to city mapping DataFrame
+# based on the 'ZipCode' column to map ZIP codes to cities
+merged_df = pd.merge(df, zip_to_city_df, left_on='ZipCode', right_on='ZipCode', how='left')
+
+# Display the updated DataFrame
+print(merged_df)
+
+# Save the updated DataFrame to a new CSV file if needed
+merged_df.to_csv("C:\\Ohiodata_Report\\final.csv", index=False)
